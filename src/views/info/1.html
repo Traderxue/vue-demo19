@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>盒子缓慢移动效果</title>
+</head>
+
+<body>
+    <div class="box" id="movingBox"></div>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 5s linear;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const movingBox = document.getElementById("movingBox");
+
+            function moveBox() {
+                const newX = Math.random() * window.innerWidth;
+                const newY = Math.random() * window.innerHeight;
+
+                movingBox.style.transform = `translate(${newX}px, ${newY}px)`;
+            }
+
+            setInterval(moveBox, 3000); // 每隔3秒移动一次
+        });
+
+    </script>
+</body>
+
+</html>
