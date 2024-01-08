@@ -7,7 +7,7 @@ const active = ref(0)
 <template>
     <div class="index">
         <RouterView />
-        <van-tabbar v-model="active" route active-color="#ff2e63">
+        <van-tabbar v-model="active" route active-color="#ff2e63" inactive-color="rgba(255,255,255,0.7)">
             <van-tabbar-item to="/home">
                 <span class="material-symbols-outlined">
                     home

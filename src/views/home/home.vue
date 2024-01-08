@@ -7,21 +7,21 @@ const typeList = ref([
         price: "22003.1",
         parcent: "0.12",
         price_cny: "126462",
-        up:0
+        up: 0
     },
     {
         type: "ETH",
         price: "22003.1",
         parcent: "0.12",
         price_cny: "126462",
-        up:1
+        up: 1
     },
     {
         type: "SOL",
         price: "22003.1",
         parcent: "0.12",
         price_cny: "126462",
-        up:1
+        up: 1
     },
 ]);
 
@@ -91,10 +91,10 @@ const artList = ref([
         </div>
         <div class="product">
             <div v-for="(item, index) in typeList" :key="index">
-                <span :class="item.up==1?'up':'down'">{{ item.type }}/USDT</span>
-                <span class="price" :class="item.up==1?'up':'down'">{{ item.price }}</span>
-                <span :class="item.up==1?'up':'down'">{{ item.parcent }}%</span>
-                <span :class="item.up==1?'up':'down'">≈ {{ item.price_cny }} CNY</span>
+                <span :class="item.up == 1 ? 'up' : 'down'">{{ item.type }}/USDT</span>
+                <span class="price" :class="item.up == 1 ? 'up' : 'down'">{{ item.price }}</span>
+                <span :class="item.up == 1 ? 'up' : 'down'">{{ item.parcent }}%</span>
+                <span :class="item.up == 1 ? 'up' : 'down'">≈ {{ item.price_cny }} CNY</span>
             </div>
         </div>
         <div class="news">
@@ -184,10 +184,12 @@ const artList = ref([
             span {
                 margin: 2px 0px;
             }
-            .up{
+
+            .up {
                 color: #00b8a9;
             }
-            .down{
+
+            .down {
                 color: #e84545;
             }
         }
