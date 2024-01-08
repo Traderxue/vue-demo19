@@ -1,3 +1,30 @@
+<script setup>
+import { ref } from 'vue';
+
+const navList = ref([
+  {
+    path: "/security",
+    title: "安全中心",
+    icon: "verified_user"
+  },
+  {
+    path: "/security",
+    title: "安全中心",
+    icon: "verified_user"
+  },
+  {
+    path: "/security",
+    title: "安全中心",
+    icon: "verified_user"
+  },
+  {
+    path: "/security",
+    title: "安全中心",
+    icon: "verified_user"
+  },
+])
+</script>
+
 <template>
   <div class="mine">
     <div class="header">
@@ -28,6 +55,20 @@
         </div>
       </div>
     </div>
+    <div class="box">
+      <div class="per" v-for="(item, index) in navList" :key="index">
+        <div>
+          <span class="material-symbols-outlined">
+            {{ item.icon }}
+          </span>
+          <span>{{ item.title }}</span>
+        </div>
+        <span class="material-symbols-outlined">
+          arrow_forward_ios
+        </span>
+      </div>
+      <button>退出登录</button>
+    </div>
 
   </div>
 </template>
@@ -50,7 +91,7 @@
     margin: 20px 0px;
     width: auto;
     height: 180px;
-    background:  rgba($color: #112d4e, $alpha: 0.5);
+    background: rgba($color: #112d4e, $alpha: 0.5);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -88,7 +129,52 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }    }
-
+      }
+    }
   }
-}</style>
+
+  .box {
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background: rgba($color: #112d4e, $alpha: 0.5);
+    color: rgba($color: #FFFFFF, $alpha: 0.9);
+
+    .per {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 10px 0px;
+      border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.9);
+      padding-bottom: 15px;
+
+      div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        span {
+          margin-right: 5px;
+        }
+      }
+    }
+    button{
+      width: 100%;
+      height: 38px;
+      margin: 15px 0px;
+      border: 0;
+      border-radius: 20px;
+      background: #3490de;
+      color: rgba($color: #FFFFFF, $alpha: 0.9);
+      box-shadow: 2px 2px 2px 2px #3490de;
+    }
+  }
+}
+</style>
