@@ -28,3 +28,12 @@ const active = ref(0)
         </van-tabbar>
     </div>
 </template>
+
+<style scoped lang="scss">
+.van-tabbar{
+    background: #0F0B3B;
+}
+.van-tabbar-item{
+    background: #0F0B3B;
+}
+</style>
